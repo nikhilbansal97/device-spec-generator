@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/prism.css">
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">Device Spec Generator</h1>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <div class="dropdown col-4" id="dropDownAbi">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              ABIs
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item abi-item">armeabi</a>
+              <a class="dropdown-item abi-item">armeabi-v7a</a>
+              <a class="dropdown-item abi-item">arm64-v8a</a>
+              <a class="dropdown-item abi-item">x86</a>
+              <a class="dropdown-item abi-item">x86_64</a>
+              <a class="dropdown-item abi-item">mips</a>
+              <a class="dropdown-item abi-item">mips64</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <p id="abiValue"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="dropdown col-4" id="dropDownAbi">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Locale List
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item locale-item">English</a>
+              <a class="dropdown-item locale-item">French</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <p id="localeValue"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="dropdown col-4" id="dropDownAbi">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Screen Density
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item screen-item">320</a>
+              <a class="dropdown-item screen-item">640</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <p id="screenValue"></p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="dropdown col-4" id="dropDownAbi">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              SDKs
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item sdk-item">22</a>
+              <a class="dropdown-item sdk-item">23</a>
+              <a class="dropdown-item sdk-item">24</a>
+              <a class="dropdown-item sdk-item">25</a>
+              <a class="dropdown-item sdk-item">26</a>
+              <a class="dropdown-item sdk-item">27</a>
+              <a class="dropdown-item sdk-item">28</a>
+            </div>
+          </div>
+          <div class="col-4">
+            <p id="sdkValue"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-6 code-area">
+        <pre><code class="language-json"></code></pre>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+  <script src="js/prism.js"></script>
+</body>
+</html>
