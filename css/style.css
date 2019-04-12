@@ -10,3 +10,15 @@ p {
 .heading {
   margin-top: 24px;
 }
+
+.col-3 {
+  margin-right: 12px;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+#dropdownDevices {
+  margin-bottom: 36px;
+}
