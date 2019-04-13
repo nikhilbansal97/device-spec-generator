@@ -4,6 +4,8 @@ This tools helps in generating a device specific JSON to test your Android App B
 
 You can create a custom configuration file by selecting from the options available!
 
+### [Try it out!](https://device-spec-generator.firebaseapp.com/)
+
 ## Pull Requests
 
 Any pull requests that will make the project better are welcome! Just make sure you follow the below guidelines.
