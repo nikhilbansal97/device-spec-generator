@@ -35,7 +35,7 @@ function initDropDown() {
     $(".density-container").append(`<div class=\"input-group mb-3\">\
     <div class=\"input-group-prepend\">\
       <div class=\"input-group-text\">\
-        <input type=\"radio\" class=\"item-density\" name=\"${density}\" aria-label=\"Checkbox for following text input\">\
+        <input type=\"radio\" class=\"item-density\" id=\"${density}\" name=\"density\" aria-label=\"Checkbox for following text input\">\
       </div>\
     </div>\
     <label class=\"form-control\">${density}</label>\
@@ -46,7 +46,7 @@ function initDropDown() {
     $(".sdk-container").append(`<div class=\"input-group mb-3\">\
     <div class=\"input-group-prepend\">\
       <div class=\"input-group-text\">\
-        <input type=\"radio\" class=\"item-sdk\" name=\"${sdk}\" aria-label=\"Checkbox for following text input\">\
+        <input type=\"radio\" class=\"item-sdk\" id=\"${sdk}\" name=\"sdk\" aria-label=\"Checkbox for following text input\">\
       </div>\
     </div>\
     <label class=\"form-control\">${sdk}</label>\
@@ -81,23 +81,23 @@ function loadJSON(deviceName) {
 
   $(".item-density").each(function () {
     let input = $(this)[0]
-    input.checked = device.screenDensity == input.name
+    input.checked = device.screenDensity == input.id
   })
 
   $(".item-sdk").each(function () {
     let input = $(this)[0]
-    input.checked = device.sdkVersion == input.name
+    input.checked = device.sdkVersion == input.id
   })
 }
 
 function generateJSON() {
   if (isInfoValid()) {
-    let deviceInfo = DeviceInfo()
+    let deviceInfo = new DeviceInfo()
 
     let abiList = []
     $('.item-abi').each(function () {
       if ($(this)[0].checked) {
-        abiList.append($(this)[0].name)
+        abiList.push($(this)[0].name)
       }
     })
     deviceInfo.abiList = abiList
@@ -105,25 +105,25 @@ function generateJSON() {
     let localeList = []
     $('.item-locale').each(function () {
       if ($(this)[0].checked) {
-        localeList.append($(this)[0].name)
+        localeList.push($(this)[0].name)
       }
     })
     deviceInfo.localeList = localeList
 
     $('.item-sdk').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.sdk = $(this)[0].name
+        deviceInfo.sdk = $(this)[0].id
       }
     })
 
     $('.item-density').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.density = $(this)[0].name
+        deviceInfo.density = $(this)[0].id
       }
     })
 
     console.log(deviceInfo);
-    
+    $('#generated-json').html(JSON.stringify(deviceInfo, "\t"))
   } else {
     $('.alert').show()
     setTimeout(() => {
