@@ -9,11 +9,15 @@ p {
 
 .heading {
   margin-top: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 .header {
   margin-bottom: 24px;
+}
+
+.credits {
+  margin-bottom: 12px;
 }
 
 .alert {

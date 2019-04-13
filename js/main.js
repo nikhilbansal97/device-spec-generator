@@ -100,7 +100,7 @@ function generateJSON() {
         abiList.push($(this)[0].name)
       }
     })
-    deviceInfo.abiList = abiList
+    deviceInfo.supportedAbis = abiList
 
     let localeList = []
     $('.item-locale').each(function () {
@@ -108,17 +108,17 @@ function generateJSON() {
         localeList.push($(this)[0].name)
       }
     })
-    deviceInfo.localeList = localeList
+    deviceInfo.supportedLocales = localeList
 
     $('.item-sdk').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.sdk = parseInt($(this)[0].id)
+        deviceInfo.sdkVersion = parseInt($(this)[0].id)
       }
     })
 
     $('.item-density').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.density = parseInt($(this)[0].id)
+        deviceInfo.screenDensity = parseInt($(this)[0].id)
       }
     })
 
@@ -164,9 +164,9 @@ addListeners()
 
 class DeviceInfo {
   DeviceInfo(abiList, localeList, density, sdk) {
-    this.abiList = abiList
-    this.localeList = localeList
-    this.density = density
-    this.sdk = sdk
+    this.supportedAbis = abiList
+    this.supportedLocales = localeList
+    this.screenDensity = density
+    this.sdkVersion = sdk
   }
 }
