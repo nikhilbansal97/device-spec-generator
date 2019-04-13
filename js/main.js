@@ -35,7 +35,7 @@ function initDropDown() {
     $(".density-container").append(`<div class=\"input-group mb-3\">\
     <div class=\"input-group-prepend\">\
       <div class=\"input-group-text\">\
-        <input type=\"checkbox\" class=\"item-density\" name=\"${density}\" aria-label=\"Checkbox for following text input\">\
+        <input type=\"radio\" class=\"item-density\" name=\"${density}\" aria-label=\"Checkbox for following text input\">\
       </div>\
     </div>\
     <label class=\"form-control\">${density}</label>\
@@ -46,7 +46,7 @@ function initDropDown() {
     $(".sdk-container").append(`<div class=\"input-group mb-3\">\
     <div class=\"input-group-prepend\">\
       <div class=\"input-group-text\">\
-        <input type=\"checkbox\" class=\"item-sdk\" name=\"${sdk}\" aria-label=\"Checkbox for following text input\">\
+        <input type=\"radio\" class=\"item-sdk\" name=\"${sdk}\" aria-label=\"Checkbox for following text input\">\
       </div>\
     </div>\
     <label class=\"form-control\">${sdk}</label>\
@@ -59,6 +59,9 @@ function addListeners() {
     device = $(this).text()
     $('#deviceValue').text(device)
     loadJSON(device)
+  })
+  $('#generateButton').click(function () {
+    generateJSON()
   })
 }
 
@@ -89,16 +92,82 @@ function loadJSON(deviceName) {
 
 function generateJSON() {
   if (isInfoValid()) {
+    let deviceInfo = DeviceInfo()
 
+    let abiList = []
+    $('.item-abi').each(function () {
+      if ($(this)[0].checked) {
+        abiList.append($(this)[0].name)
+      }
+    })
+    deviceInfo.abiList = abiList
+
+    let localeList = []
+    $('.item-locale').each(function () {
+      if ($(this)[0].checked) {
+        localeList.append($(this)[0].name)
+      }
+    })
+    deviceInfo.localeList = localeList
+
+    $('.item-sdk').each(function () {
+      if ($(this)[0].checked) {
+        deviceInfo.sdk = $(this)[0].name
+      }
+    })
+
+    $('.item-density').each(function () {
+      if ($(this)[0].checked) {
+        deviceInfo.density = $(this)[0].name
+      }
+    })
+
+    console.log(deviceInfo);
+    
+  } else {
+    $('.alert').show()
+    setTimeout(() => {
+      $('.alert').hide()
+    }, 5000)
   }
 }
 
 function isInfoValid() {
-  return selectedAbi.length > 0 &&
-    selectedLocale.length > 0 &&
-    selectedSdk != 0 &&
-    selectedScreenDensity != 0
+  let abiSelected = false
+  $('.item-abi').each(function () {
+    if ($(this)[0].checked) {
+      abiSelected = true
+    }
+  })
+  let localeSelected = false
+  $('.item-locale').each(function () {
+    if ($(this)[0].checked) {
+      localeSelected = true
+    }
+  })
+  let sdkSelected = false
+  $('.item-sdk').each(function () {
+    if ($(this)[0].checked) {
+      sdkSelected = true
+    }
+  })
+  let densitySelected = false
+  $('.item-density').each(function () {
+    if ($(this)[0].checked) {
+      densitySelected = true
+    }
+  })
+  return abiSelected && localeSelected && sdkSelected && densitySelected
 }
 
 initDropDown()
 addListeners()
+
+class DeviceInfo {
+  DeviceInfo(abiList, localeList, density, sdk) {
+    this.abiList = abiList
+    this.localeList = localeList
+    this.density = density
+    this.sdk = sdk
+  }
+}

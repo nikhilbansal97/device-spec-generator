@@ -9,10 +9,16 @@ p {
 
 .heading {
   margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .header {
   margin-bottom: 24px;
+}
+
+.alert {
+  margin-top: 24px;
+  display: none;
 }
 
 #dropdownDevices {
