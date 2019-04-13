@@ -112,18 +112,17 @@ function generateJSON() {
 
     $('.item-sdk').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.sdk = $(this)[0].id
+        deviceInfo.sdk = parseInt($(this)[0].id)
       }
     })
 
     $('.item-density').each(function () {
       if ($(this)[0].checked) {
-        deviceInfo.density = $(this)[0].id
+        deviceInfo.density = parseInt($(this)[0].id)
       }
     })
 
-    console.log(deviceInfo);
-    $('#generated-json').html(JSON.stringify(deviceInfo, "\t"))
+    $('#generated-json').html(JSON.stringify(deviceInfo, null, "\t"))
   } else {
     $('.alert').show()
     setTimeout(() => {
