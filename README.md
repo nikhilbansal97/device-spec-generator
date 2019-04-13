@@ -13,7 +13,6 @@ Any pull requests that will make the project better are welcome! Just make sure 
 - Have Fun!! :)
 
 ## License
-=======
 
     Copyright 2019 Nikhil Bansal
 
