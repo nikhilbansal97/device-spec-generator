@@ -1,8 +1,8 @@
 var abiList = ["armeabi", "armeabi-v7a", "arm64-v8a", "x86", "x86_64", "mips", "mips64"];
-var localeList = ["en", "fr"];
-var screenDensityList = [320, 640];
+var localeList = ["en", "fr", "ru", "es"];
+var screenDensityList = [120, 160, 240, 320, 420, 480, 640];
 var sdkList = [22, 23, 24, 25, 26, 27, 28];
-var devicesList = ["One Plus Six", "Samsung S10"]
+var devicesList = getDevicesList()
 
 function initDropDown() {
   devicesList.forEach((device) => {
