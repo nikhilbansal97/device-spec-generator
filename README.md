@@ -12,6 +12,10 @@ You can create a custom configuration file by selecting from the options availab
 
 ### [Try it out!](https://device-spec-generator.firebaseapp.com/)
 
+## ScreenShot
+
+![Screenshot](img/screenshot.png)
+
 ## Pull Requests
 
 Any pull requests that will make the project better are welcome! Just make sure you follow the below guidelines.
