@@ -72,7 +72,7 @@ let deviceMap = new Map([
             "en",
             "fr"
         ],
-        "screenDensity": 360,
+        "screenDensity": 320,
         "sdkVersion": 27
     }],
     ["Asus Zenphone 2", {
