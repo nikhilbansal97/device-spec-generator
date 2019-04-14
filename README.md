@@ -1,5 +1,11 @@
 # Device Spec Generator
 
+[![GitHub stars](https://img.shields.io/github/stars/nikhilbansal97/device-spec-generator.svg?style=social&label=Star)](https://github.com/nikhilbansal97/device-spec-generator)
+[![GitHub forks](https://img.shields.io/github/forks/nikhilbansal97/device-spec-generator.svg?style=social&label=Fork)](https://github.com/nikhilbansal97/device-spec-generator/fork)
+[![GitHub followers](https://img.shields.io/github/followers/nikhilbansal97.svg?style=social&label=Follow)](https://github.com/nikhilbansal97/device-spec-generator)
+[![Twitter Follow](https://img.shields.io/twitter/follow/nikhilbansal97.svg?style=social)](https://twitter.com/nikhilbansal97)
+
+
 This tools helps in generating a device specific JSON to test your Android App Bundle. Device configurations for most of the flagship devices is already present. Just choose the device from dropdown and click on **Generate!**
 
 You can create a custom configuration file by selecting from the options available!
